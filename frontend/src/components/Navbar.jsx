@@ -68,7 +68,7 @@ export const Navbar = () => {
             <a
               href="#contacto"
               onClick={(e) => handleLinkClick(e, "#contacto")}
-              className="text-[14px] font-semibold bg-[#D2FDFE] text-black px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity duration-200"
+              className="text-[14px] font-semibold bg-[#00E5FF] text-black px-5 py-2.5 rounded-md hover:bg-[#00B8D4] transition-colors duration-200"
             >
               Hablemos
             </a>
