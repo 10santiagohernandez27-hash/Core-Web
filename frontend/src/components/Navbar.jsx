@@ -91,7 +91,7 @@ export const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="text-[15px] font-medium text-black/70 hover:text-black px-2 transition-colors duration-200"
+                  className="text-[16px] font-medium text-black/70 hover:text-black px-2 transition-colors duration-200"
                 >
                   {link.label}
                 </a>
