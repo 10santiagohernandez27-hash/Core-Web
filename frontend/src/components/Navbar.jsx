@@ -37,13 +37,20 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-[72px]">
           <a
             href="#"
-            className="text-[22px] font-bold tracking-tight text-black"
+            className="flex items-center gap-3"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            Core<span className="text-[#D2FDFE]">.</span>
+            <img
+              src="https://i.ibb.co/zVBQQFw/logo-core.png"
+              alt="Core - Infraestructura digital"
+              className="h-8 md:h-10 w-auto"
+            />
+            <span className="text-[22px] font-bold tracking-tight text-black">
+              Core<span className="text-[#00E5FF]">.</span>
+            </span>
           </a>
 
           {/* Desktop Links */}
