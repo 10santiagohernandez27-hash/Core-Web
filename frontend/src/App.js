@@ -3,7 +3,6 @@ import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesSlider } from "@/components/ServicesSlider";
 import { HowItWorks } from "@/components/HowItWorks";
-import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
@@ -16,7 +15,6 @@ function App() {
       <HeroSection />
       <ServicesSlider />
       <HowItWorks />
-      <Testimonials />
       <FAQ />
       <ContactCTA />
       <Footer />
