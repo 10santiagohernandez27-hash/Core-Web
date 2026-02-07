@@ -22,7 +22,7 @@ export const Footer = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Core<span className="text-[#D2FDFE]">.</span>
+              Core<span className="text-[#00E5FF]">.</span>
             </a>
             <p className="text-[14px] text-white/40 mt-2 max-w-[280px] leading-[1.5]">
               Infraestructura digital para negocios que quieren crecer.
