@@ -18,7 +18,7 @@ export const FAQ = () => {
       className="py-[80px] md:py-[120px] bg-white reveal-section"
     >
       <div className="max-w-[720px] mx-auto px-6 md:px-10">
-        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-tight">
+        <h2 className="text-[32px] md:text-[48px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-[-0.01em] leading-[1.2]">
           Preguntas Frecuentes
         </h2>
 
@@ -29,10 +29,10 @@ export const FAQ = () => {
               value={`item-${idx}`}
               className="border-b border-[#F8F9FA]"
             >
-              <AccordionTrigger className="text-[15px] md:text-[16px] font-semibold text-black py-5 md:py-6 hover:no-underline hover:bg-[#F8F9FA] px-3 -mx-3 rounded-lg [&>svg]:text-[#00E5FF]">
+              <AccordionTrigger className="text-[16px] md:text-[18px] font-bold text-black py-5 md:py-6 hover:no-underline hover:bg-[#F8F9FA] px-3 -mx-3 rounded-lg [&>svg]:text-[#00E5FF]">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[14px] md:text-[15px] text-black/80 leading-[1.65] pb-5">
+              <AccordionContent className="text-[16px] md:text-[18px] text-black/80 leading-[1.6] pb-5">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
