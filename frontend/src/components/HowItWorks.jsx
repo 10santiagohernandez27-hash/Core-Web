@@ -20,7 +20,7 @@ export const HowItWorks = () => {
           {stepsData.map((step, idx) => (
             <div
               key={step.number}
-              className="group relative border border-[#F2F3D9] rounded-xl p-8 md:p-10 hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.06)] transition-shadow duration-300"
+              className="group relative bg-white border border-[#F8F9FA] rounded-xl p-8 md:p-10 hover:shadow-[0_4px_12px_rgba(0,229,255,0.15)] transition-shadow duration-300"
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
               <span className="block text-[52px] md:text-[64px] font-bold text-[#D2FDFE] leading-none mb-5 select-none">
