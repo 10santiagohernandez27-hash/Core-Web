@@ -43,7 +43,7 @@ export const HeroSection = () => {
           </h2>
           <button
             onClick={scrollToServices}
-            className="mt-10 md:mt-12 bg-[#D2FDFE] text-black text-[15px] font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity duration-200 hover:scale-[1.02] active:scale-[0.98] transition-transform"
+            className="mt-10 md:mt-12 bg-[#00E5FF] text-black text-[15px] font-semibold px-8 py-4 rounded-md hover:bg-[#00B8D4] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 ease-out shadow-sm hover:shadow-md"
           >
             {heroData.ctaText}
           </button>
