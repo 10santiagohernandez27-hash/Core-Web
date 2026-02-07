@@ -1,28 +1,52 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { servicesData } from "../mock";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export const ServicesSlider = () => {
   const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [phase, setPhase] = useState("visible"); // 'visible' | 'exiting' | 'entering'
+  const timerRef = useRef(null);
   const sectionRef = useScrollReveal();
 
-  const goTo = useCallback(
-    (index) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrent(index);
-      setTimeout(() => setIsAnimating(false), 500);
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  const navigate = useCallback(
+    (newIndex) => {
+      if (phase !== "visible") return;
+
+      setPhase("exiting");
+
+      timerRef.current = setTimeout(() => {
+        setCurrent(newIndex);
+        setPhase("entering");
+
+        timerRef.current = setTimeout(() => {
+          setPhase("visible");
+        }, 700);
+      }, 300);
     },
-    [isAnimating]
+    [phase]
   );
 
-  const prev = () => goTo(current === 0 ? servicesData.length - 1 : current - 1);
-  const next = () => goTo(current === servicesData.length - 1 ? 0 : current + 1);
+  const prev = () =>
+    navigate(current === 0 ? servicesData.length - 1 : current - 1);
+  const next = () =>
+    navigate(current === servicesData.length - 1 ? 0 : current + 1);
 
   const slide = servicesData[current];
   const isImageRight = slide.imagePosition === "right";
+
+  const slideClass =
+    phase === "exiting"
+      ? "slide-exit"
+      : phase === "entering"
+      ? "slide-enter"
+      : "slide-visible";
 
   return (
     <section
@@ -40,9 +64,7 @@ export const ServicesSlider = () => {
           {/* Desktop Layout */}
           <div className="hidden md:block">
             <div
-              className={`flex items-center gap-12 lg:gap-16 min-h-[500px] transition-opacity duration-500 ease-in-out ${
-                isAnimating ? "opacity-0" : "opacity-100"
-              }`}
+              className={`flex items-center gap-12 lg:gap-16 min-h-[500px] ${slideClass}`}
             >
               {/* Text */}
               <div
@@ -50,13 +72,13 @@ export const ServicesSlider = () => {
                   isImageRight ? "order-1" : "order-2"
                 }`}
               >
-                <h3 className="text-[28px] md:text-[36px] font-bold text-black leading-[1.2] mb-5">
+                <h3 className="slide-title text-[28px] md:text-[36px] font-bold text-black leading-[1.2] mb-5">
                   {slide.title}
                 </h3>
-                <p className="text-[16px] md:text-[18px] text-black/60 leading-[1.6] mb-8 max-w-[480px]">
+                <p className="slide-description text-[16px] md:text-[18px] text-black/60 leading-[1.6] mb-8 max-w-[480px]">
                   {slide.description}
                 </p>
-                <button className="border-2 border-[#D2FDFE] text-black text-[14px] font-semibold px-6 py-3 rounded-md hover:bg-[#D2FDFE] transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                <button className="slide-cta border-2 border-[#00E5FF] text-black text-[14px] font-semibold px-6 py-3 rounded-md hover:bg-[#00E5FF] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300">
                   {slide.ctaText}
                 </button>
               </div>
@@ -67,7 +89,7 @@ export const ServicesSlider = () => {
                   isImageRight ? "order-2" : "order-1"
                 }`}
               >
-                <div className="relative">
+                <div className="slide-image relative">
                   <div className="rounded-xl overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.06)]">
                     <img
                       src={slide.image}
@@ -100,12 +122,12 @@ export const ServicesSlider = () => {
                   <p className="text-[15px] text-black/60 leading-[1.6] mb-5">
                     {service.description}
                   </p>
-                  <button className="border-2 border-[#D2FDFE] text-black text-[14px] font-semibold px-5 py-2.5 rounded-md hover:bg-[#D2FDFE] transition-colors duration-200">
+                  <button className="border-2 border-[#00E5FF] text-black text-[14px] font-semibold px-5 py-2.5 rounded-md hover:bg-[#00E5FF] transition-[background-color,transform] duration-300 hover:-translate-y-0.5 active:translate-y-0">
                     {service.ctaText}
                   </button>
                 </div>
                 {idx < servicesData.length - 1 && (
-                  <div className="border-b border-[#F2F3D9] pt-4" />
+                  <div className="border-b border-[#F8F9FA] pt-4" />
                 )}
               </div>
             ))}
@@ -115,7 +137,7 @@ export const ServicesSlider = () => {
           <div className="hidden md:flex items-center justify-center gap-6 mt-12">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors duration-200"
+              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200"
               aria-label="Servicio anterior"
             >
               <ChevronLeft size={20} />
@@ -126,11 +148,11 @@ export const ServicesSlider = () => {
               {servicesData.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => goTo(idx)}
-                  className={`rounded-full transition-all duration-300 ${
+                  onClick={() => navigate(idx)}
+                  className={`rounded-full transition-[width,height,background-color,transform] duration-300 ${
                     idx === current
-                      ? "w-8 h-3 bg-[#D2FDFE]"
-                      : "w-3 h-3 bg-black/15 hover:bg-black/30"
+                      ? "w-8 h-3 bg-[#00E5FF] scale-110"
+                      : "w-3 h-3 bg-[#F8F9FA] hover:bg-black/20"
                   }`}
                   aria-label={`Ir al servicio ${idx + 1}`}
                 />
@@ -139,7 +161,7 @@ export const ServicesSlider = () => {
 
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors duration-200"
+              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200"
               aria-label="Servicio siguiente"
             >
               <ChevronRight size={20} />
