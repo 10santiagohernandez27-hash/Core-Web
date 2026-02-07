@@ -116,13 +116,13 @@ export const ServicesSlider = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-[22px] font-bold text-black leading-[1.2] mb-3">
+                  <h3 className="text-[24px] font-bold text-black leading-[1.3] mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-[15px] text-black/60 leading-[1.6] mb-5">
+                  <p className="text-[16px] text-black/60 leading-[1.6] mb-5">
                     {service.description}
                   </p>
-                  <button className="border-2 border-[#00E5FF] text-black text-[14px] font-semibold px-5 py-2.5 rounded-md hover:bg-[#00E5FF] transition-[background-color,transform] duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                  <button className="border-2 border-[#00E5FF] text-black text-[16px] font-medium px-5 py-2.5 rounded-md hover:bg-[#00E5FF] transition-[background-color,transform] duration-300 hover:-translate-y-0.5 active:translate-y-0 tracking-[0.01em]">
                     {service.ctaText}
                   </button>
                 </div>
