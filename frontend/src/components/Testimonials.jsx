@@ -32,7 +32,7 @@ export const Testimonials = () => {
                   </span>
                 </div>
                 <div className="flex-1">
-                  <Quote size={18} className="text-[#D2FDFE] mb-3" />
+                  <Quote size={18} className="text-[#00E5FF] mb-3" />
                   <p className="text-[15px] md:text-[16px] text-black/65 leading-[1.65] mb-5">
                     {testimonial.text}
                   </p>
