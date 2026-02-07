@@ -27,12 +27,12 @@ export const FAQ = () => {
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="border-b border-[#F2F3D9]"
+              className="border-b border-[#F8F9FA]"
             >
-              <AccordionTrigger className="text-[15px] md:text-[16px] font-semibold text-black py-5 md:py-6 hover:no-underline">
+              <AccordionTrigger className="text-[15px] md:text-[16px] font-semibold text-black py-5 md:py-6 hover:no-underline hover:bg-[#F8F9FA] px-3 -mx-3 rounded-lg [&>svg]:text-[#00E5FF]">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[14px] md:text-[15px] text-black/55 leading-[1.65] pb-5">
+              <AccordionContent className="text-[14px] md:text-[15px] text-black/80 leading-[1.65] pb-5">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
