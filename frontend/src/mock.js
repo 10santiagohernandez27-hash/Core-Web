@@ -121,7 +121,6 @@ export const contactData = {
 export const navLinks = [
   { label: "Servicios", href: "#servicios" },
   { label: "Proceso", href: "#proceso" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "FAQ", href: "#faq" },
   { label: "Contacto", href: "#contacto" }
 ];
