@@ -58,7 +58,7 @@ export const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-[14px] font-medium text-black/70 hover:text-black transition-colors duration-200"
+                className="text-[16px] font-medium text-black/70 hover:text-black transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -66,7 +66,7 @@ export const Navbar = () => {
             <a
               href="#contacto"
               onClick={(e) => handleLinkClick(e, "#contacto")}
-              className="text-[14px] font-semibold bg-[#00E5FF] text-black px-5 py-2.5 rounded-md hover:bg-[#00B8D4] transition-colors duration-200"
+              className="text-[16px] font-medium bg-[#00E5FF] text-black px-5 py-2.5 rounded-md hover:bg-[#00B8D4] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 shadow-sm hover:shadow-md tracking-[0.01em]"
             >
               Hablemos
             </a>
