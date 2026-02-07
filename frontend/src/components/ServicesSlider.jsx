@@ -55,7 +55,7 @@ export const ServicesSlider = () => {
       className="py-[80px] md:py-[120px] bg-white reveal-section"
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-20">
-        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-tight">
+        <h2 className="text-[32px] md:text-[48px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-[-0.01em] leading-[1.2]">
           Nuestros Servicios
         </h2>
 
