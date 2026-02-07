@@ -32,18 +32,18 @@ export const HeroSection = () => {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-20 w-full">
         <div className="flex flex-col items-center text-center py-16 md:py-20">
           <h1
-            className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-bold text-black leading-[1.1] tracking-tight max-w-[900px] animate-fade-in-up"
+            className="text-[40px] md:text-[64px] font-bold text-black leading-[1.1] tracking-[-0.02em] max-w-[900px] animate-fade-in-up"
           >
             {heroData.title}
           </h1>
           <h2
-            className="text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] font-normal text-black/60 mt-6 md:mt-8 max-w-[640px] leading-[1.5] animate-fade-in-up-delay"
+            className="text-[16px] md:text-[18px] font-normal text-black/60 mt-6 md:mt-8 max-w-[640px] leading-[1.6] animate-fade-in-up-delay"
           >
             {heroData.subtitle}
           </h2>
           <button
             onClick={scrollToServices}
-            className="mt-10 md:mt-12 bg-[#00E5FF] text-black text-[15px] font-semibold px-8 py-4 rounded-md hover:bg-[#00B8D4] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 ease-out shadow-sm hover:shadow-md"
+            className="mt-10 md:mt-12 bg-[#00E5FF] text-black text-[16px] font-medium px-8 py-4 rounded-md hover:bg-[#00B8D4] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 ease-out shadow-sm hover:shadow-md tracking-[0.01em]"
           >
             {heroData.ctaText}
           </button>
