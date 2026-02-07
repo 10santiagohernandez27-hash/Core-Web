@@ -95,7 +95,7 @@ export const ContactCTA = () => {
           <button
             type="submit"
             disabled={loading || submitted}
-            className="w-full bg-[#D2FDFE] text-black text-[15px] font-semibold px-6 py-4 rounded-lg hover:opacity-90 transition-opacity duration-200 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
+            className="w-full bg-[#00E5FF] text-black text-[15px] font-semibold px-6 py-4 rounded-lg hover:bg-[#00B8D4] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 shadow-sm hover:shadow-md disabled:opacity-70 disabled:hover:translate-y-0 flex items-center justify-center gap-2 mt-2"
           >
             {submitted ? (
               <>
