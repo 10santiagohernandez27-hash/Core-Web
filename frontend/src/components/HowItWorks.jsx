@@ -23,7 +23,7 @@ export const HowItWorks = () => {
               className="group relative bg-white border border-[#F8F9FA] rounded-xl p-8 md:p-10 hover:shadow-[0_4px_12px_rgba(0,229,255,0.15)] transition-shadow duration-300"
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
-              <span className="block text-[52px] md:text-[64px] font-bold text-[#D2FDFE] leading-none mb-5 select-none">
+              <span className="block text-[52px] md:text-[64px] font-bold text-[#00E5FF] leading-none mb-5 select-none">
                 {step.number}
               </span>
               <h3 className="text-[18px] md:text-[20px] font-bold text-black leading-[1.3] mb-3">
