@@ -29,7 +29,7 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-[0_1px_0_0_#F2F3D9]"
+          ? "bg-white/95 backdrop-blur-sm shadow-[0_1px_0_0_#F8F9FA]"
           : "bg-transparent"
       }`}
     >
