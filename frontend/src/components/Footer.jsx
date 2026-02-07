@@ -16,7 +16,7 @@ export const Footer = () => {
           <div>
             <a
               href="#"
-              className="text-[22px] font-bold tracking-tight"
+              className="text-[22px] font-bold tracking-[-0.02em]"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
