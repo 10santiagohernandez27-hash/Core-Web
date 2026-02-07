@@ -5,6 +5,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const AUTO_INTERVAL = 10000;
 const RESUME_DELAY = 5000;
+const SWIPE_THRESHOLD = 50;
 
 export const ServicesSlider = () => {
   const [current, setCurrent] = useState(0);
@@ -18,6 +19,9 @@ export const ServicesSlider = () => {
   const isHoveredRef = useRef(false);
   const currentRef = useRef(current);
   const phaseRef = useRef(phase);
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const touchDeltaRef = useRef(0);
+  const isSwipingRef = useRef(false);
   const sectionRef = useScrollReveal();
 
   currentRef.current = current;
@@ -63,7 +67,6 @@ export const ServicesSlider = () => {
     }, RESUME_DELAY);
   }, [clearAllTimers, startAutoRotation]);
 
-  // Start auto-rotation on mount
   useEffect(() => {
     startAutoRotation();
     return () => {
@@ -92,6 +95,55 @@ export const ServicesSlider = () => {
     }
   };
 
+  // Touch / Swipe handlers
+  const handleTouchStart = useCallback((e) => {
+    const touch = e.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    touchDeltaRef.current = 0;
+    isSwipingRef.current = false;
+    isHoveredRef.current = true;
+    setAutoPaused(true);
+  }, []);
+
+  const handleTouchMove = useCallback((e) => {
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = touch.clientY - touchStartRef.current.y;
+
+    if (!isSwipingRef.current && Math.abs(deltaX) > 10) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+        isSwipingRef.current = true;
+      }
+    }
+
+    if (isSwipingRef.current) {
+      e.preventDefault();
+      touchDeltaRef.current = deltaX;
+    }
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    isHoveredRef.current = false;
+
+    if (isSwipingRef.current && phaseRef.current === "visible") {
+      const delta = touchDeltaRef.current;
+      if (delta < -SWIPE_THRESHOLD) {
+        const nextIdx = (currentRef.current + 1) % servicesData.length;
+        handleManualNav(nextIdx);
+      } else if (delta > SWIPE_THRESHOLD) {
+        const prevIdx = currentRef.current === 0 ? servicesData.length - 1 : currentRef.current - 1;
+        handleManualNav(prevIdx);
+      } else {
+        pauseAndResume();
+      }
+    } else {
+      pauseAndResume();
+    }
+
+    isSwipingRef.current = false;
+    touchDeltaRef.current = 0;
+  }, [handleManualNav, pauseAndResume]);
+
   const slide = servicesData[current];
   const isImageRight = slide.imagePosition === "right";
 
@@ -113,23 +165,20 @@ export const ServicesSlider = () => {
           Nuestros Servicios
         </h2>
 
-        {/* Slider Container */}
+        {/* Slider Container - touch enabled for all breakpoints */}
         <div
-          className="relative"
+          className="relative touch-pan-y"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          {/* Desktop Layout */}
-          <div className="hidden md:block">
-            <div
-              className={`flex items-center gap-12 lg:gap-16 min-h-[500px] ${slideClass}`}
-            >
-              {/* Text */}
-              <div
-                className={`flex-1 ${
-                  isImageRight ? "order-1" : "order-2"
-                }`}
-              >
+          {/* Slide content */}
+          <div className={slideClass}>
+            {/* Desktop / Tablet: side-by-side layout */}
+            <div className="hidden md:flex items-center gap-12 lg:gap-16 min-h-[500px]">
+              <div className={`flex-1 ${isImageRight ? "order-1" : "order-2"}`}>
                 <h3 className="slide-title text-[24px] md:text-[32px] font-bold text-black leading-[1.3] mb-5">
                   {slide.title}
                 </h3>
@@ -140,13 +189,7 @@ export const ServicesSlider = () => {
                   {slide.ctaText}
                 </button>
               </div>
-
-              {/* Image */}
-              <div
-                className={`flex-1 ${
-                  isImageRight ? "order-2" : "order-1"
-                }`}
-              >
+              <div className={`flex-1 ${isImageRight ? "order-2" : "order-1"}`}>
                 <div className="slide-image relative">
                   <div className="rounded-xl overflow-hidden">
                     <img
@@ -159,57 +202,51 @@ export const ServicesSlider = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Mobile Layout - Vertical scroll */}
-          <div className="md:hidden space-y-12">
-            {servicesData.map((service, idx) => (
-              <div key={service.id} className="space-y-5">
+            {/* Mobile: stacked layout (image top, text below) - swipeable */}
+            <div className="md:hidden min-h-[480px]">
+              <div className="slide-image">
                 <div className="rounded-xl overflow-hidden">
                   <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-[320px] object-contain"
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-[280px] sm:h-[320px] object-contain"
                     loading="lazy"
                   />
                 </div>
-                <div>
-                  <h3 className="text-[24px] font-bold text-black leading-[1.3] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-[16px] text-black/60 leading-[1.6] mb-5">
-                    {service.description}
-                  </p>
-                  <button className="border-2 border-[#00E5FF] text-black text-[16px] font-medium px-5 py-2.5 rounded-md hover:bg-[#00E5FF] transition-[background-color,transform] duration-300 hover:-translate-y-0.5 active:translate-y-0 tracking-[0.01em]">
-                    {service.ctaText}
-                  </button>
-                </div>
-                {idx < servicesData.length - 1 && (
-                  <div className="border-b border-[#F8F9FA] pt-4" />
-                )}
               </div>
-            ))}
+              <div className="mt-6">
+                <h3 className="slide-title text-[22px] sm:text-[24px] font-bold text-black leading-[1.3] mb-3">
+                  {slide.title}
+                </h3>
+                <p className="slide-description text-[15px] sm:text-[16px] text-black/60 leading-[1.6] mb-5">
+                  {slide.description}
+                </p>
+                <button className="slide-cta border-2 border-[#00E5FF] text-black text-[15px] sm:text-[16px] font-medium px-5 py-2.5 rounded-md hover:bg-[#00E5FF] transition-[background-color,transform] duration-300 tracking-[0.01em]">
+                  {slide.ctaText}
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Desktop Navigation Controls */}
-          <div className="hidden md:flex items-center justify-center gap-6 mt-12">
+          {/* Navigation Controls - visible on ALL breakpoints */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 md:mt-12">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200 flex-shrink-0"
               aria-label="Servicio anterior"
             >
               <ChevronLeft size={20} />
             </button>
 
-            {/* Dots with progress indicator */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {servicesData.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleManualNav(idx)}
                   className={`relative rounded-full overflow-hidden transition-[width,height,transform] duration-300 ${
                     idx === current
-                      ? "w-10 h-3 scale-110"
+                      ? "w-8 sm:w-10 h-3 scale-110"
                       : "w-3 h-3 bg-[#F8F9FA] hover:bg-black/20"
                   }`}
                   aria-label={`Ir al servicio ${idx + 1}`}
@@ -236,7 +273,7 @@ export const ServicesSlider = () => {
 
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-black/10 flex items-center justify-center text-black hover:text-[#00E5FF] hover:border-[#00E5FF] transition-colors duration-200 flex-shrink-0"
               aria-label="Servicio siguiente"
             >
               <ChevronRight size={20} />
