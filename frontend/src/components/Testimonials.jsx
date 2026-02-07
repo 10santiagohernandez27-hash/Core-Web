@@ -21,7 +21,7 @@ export const Testimonials = () => {
           {testimonialsData.map((testimonial, idx) => (
             <div
               key={testimonial.id}
-              className="border border-[#F2F3D9] rounded-xl p-7 md:p-9 hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow duration-300"
+              className="border border-[#F8F9FA] rounded-xl p-7 md:p-9 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:scale-[1.02] transition-[box-shadow,transform] duration-300"
               style={{ transitionDelay: `${idx * 80}ms` }}
             >
               <div className="flex items-start gap-4">
