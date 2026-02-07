@@ -43,12 +43,10 @@ export const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <img
-              src="https://i.ibb.co/zVBQQFw/logo-core.png"
-              alt="Core - Infraestructura digital"
-              className="h-8 md:h-10 w-auto"
-            />
-            <span className="text-[22px] font-bold tracking-tight text-black">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-lg border-2 border-dashed border-[#F8F9FA] flex items-center justify-center bg-white flex-shrink-0">
+              <span className="text-[10px] md:text-[11px] font-medium text-black/30 select-none">Logo</span>
+            </div>
+            <span className="text-[22px] font-bold tracking-[-0.02em] text-black">
               Core<span className="text-[#00E5FF]">.</span>
             </span>
           </a>
