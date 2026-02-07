@@ -36,7 +36,7 @@ export const Footer = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-[13px] text-white/50 hover:text-white transition-colors duration-200"
+                className="text-[13px] text-white/50 hover:text-[#00E5FF] transition-colors duration-200"
               >
                 {link.label}
               </a>
