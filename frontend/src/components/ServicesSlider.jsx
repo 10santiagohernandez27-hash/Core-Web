@@ -3,7 +3,7 @@ import { servicesData } from "../mock";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-const AUTO_INTERVAL = 20000;
+const AUTO_INTERVAL = 10000;
 const RESUME_DELAY = 5000;
 
 export const ServicesSlider = () => {
