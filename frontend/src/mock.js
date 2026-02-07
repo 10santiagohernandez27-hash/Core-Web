@@ -2,7 +2,7 @@ export const heroData = {
   title: "La infraestructura digital que tu negocio merece",
   subtitle: "Transformamos negocios físicos en ecosistemas digitales completos",
   ctaText: "Conoce nuestros servicios",
-  heroImage: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/o8fo8np0_core-hero-ecosistema.png"
+  heroImage: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/pce49odt_core-hero-ecosistema.png"
 };
 
 export const servicesData = [
