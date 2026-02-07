@@ -72,13 +72,13 @@ export const ServicesSlider = () => {
                   isImageRight ? "order-1" : "order-2"
                 }`}
               >
-                <h3 className="slide-title text-[28px] md:text-[36px] font-bold text-black leading-[1.2] mb-5">
+                <h3 className="slide-title text-[24px] md:text-[32px] font-bold text-black leading-[1.3] mb-5">
                   {slide.title}
                 </h3>
                 <p className="slide-description text-[16px] md:text-[18px] text-black/60 leading-[1.6] mb-8 max-w-[480px]">
                   {slide.description}
                 </p>
-                <button className="slide-cta border-2 border-[#00E5FF] text-black text-[14px] font-semibold px-6 py-3 rounded-md hover:bg-[#00E5FF] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300">
+                <button className="slide-cta border-2 border-[#00E5FF] text-black text-[16px] font-medium px-6 py-3 rounded-md hover:bg-[#00E5FF] hover:-translate-y-0.5 active:translate-y-0 transition-[background-color,transform,box-shadow] duration-300 tracking-[0.01em]">
                   {slide.ctaText}
                 </button>
               </div>
