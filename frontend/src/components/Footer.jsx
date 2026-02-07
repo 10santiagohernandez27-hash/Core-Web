@@ -46,14 +46,14 @@ export const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-white/10 mt-10 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-[12px] text-white/30">
+          <p className="text-[13px] text-white/30">
             © {new Date().getFullYear()} Core. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[12px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
+            <a href="#" className="text-[13px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
               Privacidad
             </a>
-            <a href="#" className="text-[12px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
+            <a href="#" className="text-[13px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
               Términos
             </a>
           </div>
