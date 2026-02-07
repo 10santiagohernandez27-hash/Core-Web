@@ -38,7 +38,7 @@ export const ContactCTA = () => {
     <section
       id="contacto"
       ref={sectionRef}
-      className="py-[80px] md:py-[120px] bg-[#F2F3D9] reveal-section"
+      className="py-[80px] md:py-[120px] bg-[#F8F9FA] reveal-section"
     >
       <div className="max-w-[640px] mx-auto px-6 md:px-10 text-center">
         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-black mb-5 tracking-tight">
