@@ -148,7 +148,7 @@ export const ServicesSlider = () => {
                 }`}
               >
                 <div className="slide-image relative">
-                  <div className="rounded-xl overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.06)]">
+                  <div className="rounded-xl overflow-hidden">
                     <img
                       src={slide.image}
                       alt={slide.title}
