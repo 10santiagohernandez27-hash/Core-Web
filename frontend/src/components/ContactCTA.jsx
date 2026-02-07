@@ -60,7 +60,7 @@ export const ContactCTA = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Tu nombre"
-              className="w-full px-4 py-3.5 rounded-lg bg-white border border-black/8 text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#D2FDFE] transition-shadow duration-200"
+              className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#F8F9FA] text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#00E5FF] focus:border-[#00E5FF] transition-shadow duration-200"
             />
           </div>
           <div>
@@ -74,7 +74,7 @@ export const ContactCTA = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="tu@email.com"
-              className="w-full px-4 py-3.5 rounded-lg bg-white border border-black/8 text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#D2FDFE] transition-shadow duration-200"
+              className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#F8F9FA] text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#00E5FF] focus:border-[#00E5FF] transition-shadow duration-200"
             />
           </div>
           <div>
