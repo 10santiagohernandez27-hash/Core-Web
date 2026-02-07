@@ -10,7 +10,7 @@ export const servicesData = [
     id: 1,
     title: "Webs de Conversión",
     description: "Sitios web diseñados para convertir visitantes en clientes. Velocidad, diseño premium y enfoque en resultados.",
-    image: "https://images.unsplash.com/photo-1726064855857-46c37dc43c78?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwzfHxkaWdpdGFsJTIwYnVzaW5lc3MlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDQ4MjI1OXww&ixlib=rb-4.1.0&q=85&w=600&h=500&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/a4h57mz8_core-web-conversion-turismo.png",
     imagePosition: "right",
     ctaText: "Ver más"
   },
@@ -18,7 +18,7 @@ export const servicesData = [
     id: 2,
     title: "App de Pedidos y E-commerce",
     description: "Plataformas de pedidos que se sienten como apps nativas. Experiencia fluida para tus clientes.",
-    image: "https://images.unsplash.com/photo-1762340278016-f5bb276dcf76?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwYnVzaW5lc3MlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDQ4MjI1OXww&ixlib=rb-4.1.0&q=85&w=600&h=500&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/6jnib4nq_core-app-pedidos-cafe.png",
     imagePosition: "left",
     ctaText: "Ver más"
   },
@@ -26,7 +26,7 @@ export const servicesData = [
     id: 3,
     title: "Core Wallet Cards",
     description: "Tarjetas de fidelización para Apple y Google Wallet. Moderniza la relación con tus clientes.",
-    image: "https://images.unsplash.com/photo-1706777373948-4a6cdce75975?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwYnVzaW5lc3MlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDQ4MjI1OXww&ixlib=rb-4.1.0&q=85&w=600&h=500&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/dsdjqogp_core-wallet-card-barberia.png",
     imagePosition: "right",
     ctaText: "Ver más"
   },
