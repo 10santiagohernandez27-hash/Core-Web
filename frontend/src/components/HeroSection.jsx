@@ -54,11 +54,11 @@ export const HeroSection = () => {
           className="relative w-full max-w-[960px] mx-auto mt-4 md:mt-0 animate-fade-in-up-delay-2"
           style={{ transform: `translateY(${offset}px)` }}
         >
-          <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)]">
+          <div className="relative rounded-xl overflow-hidden">
             <img
               src={heroData.heroImage}
-              alt="Infraestructura digital moderna para negocios - Core"
-              className="w-full h-[280px] sm:h-[360px] md:h-[440px] lg:h-[500px] object-cover"
+              alt="Ecosistema digital completo - Core infraestructura para negocios"
+              className="w-full h-[320px] sm:h-[400px] md:h-[480px] lg:h-[560px] object-contain"
               loading="eager"
             />
           </div>
