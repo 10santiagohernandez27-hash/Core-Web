@@ -88,7 +88,7 @@ export const ContactCTA = () => {
               onChange={handleChange}
               placeholder="Cuéntanos sobre tu proyecto"
               rows={4}
-              className="w-full px-4 py-3.5 rounded-lg bg-white border border-black/8 text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#D2FDFE] resize-none transition-shadow duration-200"
+              className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#F8F9FA] text-[15px] text-black placeholder:text-black/30 focus:outline-none focus:ring-2 focus:ring-[#00E5FF] focus:border-[#00E5FF] resize-none transition-shadow duration-200"
             />
           </div>
 
