@@ -44,7 +44,7 @@ export const Navbar = () => {
             }}
           >
             <img
-              src="https://i.ibb.co/zVBQQFw/logo-core.png"
+              src="https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/s5rv5qa9_Logo%20Png.png"
               alt="Core - Infraestructura Digital"
               className="h-8 md:h-10 w-auto flex-shrink-0"
             />
