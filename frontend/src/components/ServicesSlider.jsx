@@ -152,7 +152,7 @@ export const ServicesSlider = () => {
                     <img
                       src={slide.image}
                       alt={slide.title}
-                      className="w-full h-[400px] lg:h-[460px] object-cover"
+                      className="w-full h-[400px] lg:h-[460px] object-contain"
                       loading="lazy"
                     />
                   </div>
