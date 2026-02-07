@@ -50,10 +50,10 @@ export const Footer = () => {
             © {new Date().getFullYear()} Core. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[12px] text-white/30 hover:text-white/60 transition-colors duration-200">
+            <a href="#" className="text-[12px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
               Privacidad
             </a>
-            <a href="#" className="text-[12px] text-white/30 hover:text-white/60 transition-colors duration-200">
+            <a href="#" className="text-[12px] text-white/30 hover:text-[#00E5FF] transition-colors duration-200">
               Términos
             </a>
           </div>
