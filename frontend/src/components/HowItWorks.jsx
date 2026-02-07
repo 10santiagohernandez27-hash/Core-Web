@@ -9,7 +9,7 @@ export const HowItWorks = () => {
     <section
       id="proceso"
       ref={sectionRef}
-      className="py-[80px] md:py-[120px] bg-white reveal-section"
+      className="py-[80px] md:py-[120px] bg-[#F8F9FA] reveal-section"
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-20">
         <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-tight">
