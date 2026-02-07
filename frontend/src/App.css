@@ -1,6 +1,6 @@
 /* Core Landing Page Styles */
 
-/* Scroll Reveal Animations */
+/* ═══ Scroll Reveal Animations ═══ */
 .reveal-section {
   opacity: 0;
   transform: translateY(32px);
@@ -13,7 +13,7 @@
   transform: translateY(0);
 }
 
-/* Hero Entrance Animations */
+/* ═══ Hero Entrance Animations ═══ */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -39,7 +39,7 @@
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
-/* Subtle bounce for scroll indicator */
+/* ═══ Bounce Scroll Indicator ═══ */
 @keyframes bounceSlow {
   0%, 100% {
     transform: translateY(0);
@@ -53,7 +53,103 @@
   animation: bounceSlow 2.5s ease-in-out infinite;
 }
 
-/* Smooth scrolling */
+/* ═══ Slider Crossfade Animations ═══ */
+@keyframes slideExit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes slideEnterContent {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-exit {
+  animation: slideExit 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-enter .slide-image {
+  opacity: 0;
+  animation: slideEnterContent 600ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards;
+}
+
+.slide-enter .slide-title {
+  opacity: 0;
+  animation: slideEnterContent 600ms cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards;
+}
+
+.slide-enter .slide-description {
+  opacity: 0;
+  animation: slideEnterContent 600ms cubic-bezier(0.4, 0, 0.2, 1) 250ms forwards;
+}
+
+.slide-enter .slide-cta {
+  opacity: 0;
+  animation: slideEnterContent 600ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards;
+}
+
+.slide-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══ Focus States (Accessibility) ═══ */
+*:focus-visible {
+  outline: 2px solid #00E5FF;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #00E5FF;
+  outline-offset: 2px;
+}
+
+/* ═══ Reduced Motion ═══ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay,
+  .animate-fade-in-up-delay-2 {
+    animation: none;
+    opacity: 1;
+  }
+
+  .animate-bounce-slow {
+    animation: none;
+  }
+
+  .slide-exit,
+  .slide-enter .slide-image,
+  .slide-enter .slide-title,
+  .slide-enter .slide-description,
+  .slide-enter .slide-cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ═══ Smooth Scrolling ═══ */
 html {
   scroll-behavior: smooth;
 }
