@@ -149,6 +149,16 @@ textarea:focus-visible {
   }
 }
 
+/* ═══ Dot Progress Fill Animation ═══ */
+@keyframes dotFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* ═══ Smooth Scrolling ═══ */
 html {
   scroll-behavior: smooth;
