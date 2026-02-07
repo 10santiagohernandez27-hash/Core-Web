@@ -165,11 +165,11 @@ export const ServicesSlider = () => {
           <div className="md:hidden space-y-12">
             {servicesData.map((service, idx) => (
               <div key={service.id} className="space-y-5">
-                <div className="rounded-xl overflow-hidden shadow-[0_8px_30px_-10px_rgba(0,0,0,0.06)]">
+                <div className="rounded-xl overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-[260px] object-cover"
+                    className="w-full h-[320px] object-contain"
                     loading="lazy"
                   />
                 </div>
