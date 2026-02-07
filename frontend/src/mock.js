@@ -34,7 +34,7 @@ export const servicesData = [
     id: 4,
     title: "Sistema de Reservas Online",
     description: "Gestión de citas y reservas integrada. Ideal para restaurantes, clínicas y consultores.",
-    image: "https://images.pexels.com/photos/14348488/pexels-photo-14348488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=600",
+    image: "https://customer-assets.emergentagent.com/job_digital-core-2/artifacts/hxktcaqi_core-reservas-restaurante.png",
     imagePosition: "left",
     ctaText: "Ver más"
   }
