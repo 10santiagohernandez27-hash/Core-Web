@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core - Infraestructura Digital para tu Negocio</title>
+  <meta name="description" content="Transformamos negocios físicos en ecosistemas digitales completos. Webs, apps, wallet cards y sistemas de reservas.">
+  <meta property="og:title" content="Core - Infraestructura Digital para tu Negocio">
+  <meta property="og:description" content="Transformamos negocios físicos en ecosistemas digitales completos.">
+  <meta property="og:image" content="images/core-hero-ecosistema.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-brand" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">
+      <img src="images/Logo-Png.png" alt="Core - Infraestructura Digital" class="nav-logo">
+      <span class="nav-brand-text">Core<span class="accent-dot">.</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#proceso" class="nav-link">Proceso</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+      <a href="#contacto" class="nav-cta-btn">Hablemos</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#proceso" class="mobile-link">Proceso</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#contacto" class="mobile-link">Contacto</a>
+    <a href="#contacto" class="mobile-cta-btn">Hablemos</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <h1 class="hero-title fade-in-up">La infraestructura digital que tu negocio merece</h1>
+    <h2 class="hero-subtitle fade-in-up-delay">Transformamos negocios físicos en ecosistemas digitales completos</h2>
+    <a href="#servicios" class="btn-primary fade-in-up-delay-2">Conoce nuestros servicios</a>
+    <div class="hero-image-wrapper fade-in-up-delay-3" id="heroParallax">
+      <img src="images/core-hero-ecosistema.png" alt="Ecosistema digital completo - Core infraestructura para negocios" class="hero-image" loading="eager">
+    </div>
+    <div class="scroll-indicator">
+      <a href="#servicios" aria-label="Scroll hacia abajo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICIOS SLIDER ═══ -->
+<section id="servicios" class="section-services reveal-section">
+  <div class="container">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="slider-wrapper" id="sliderWrapper">
+      <!-- Desktop/Tablet -->
+      <div class="slide-content" id="slideContent">
+        <div class="slide-text" id="slideText">
+          <h3 class="slide-h3" id="slideTitle"></h3>
+          <p class="slide-desc" id="slideDesc"></p>
+          <a href="#contacto" class="btn-outline" id="slideCta">Ver más</a>
+        </div>
+        <div class="slide-img" id="slideImgWrap">
+          <img src="" alt="" id="slideImg" class="slide-image" loading="lazy">
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="slider-controls">
+        <button class="slider-arrow" id="prevBtn" aria-label="Servicio anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="slider-arrow" id="nextBtn" aria-label="Servicio siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CÓMO FUNCIONA ═══ -->
+<section id="proceso" class="section-process reveal-section">
+  <div class="container">
+    <h2 class="section-title">Cómo Funciona</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-number">01</span>
+        <h3 class="step-title">Conversamos sobre tu negocio</h3>
+        <p class="step-desc">Entendemos tus necesidades y objetivos específicos</p>
+        <div class="step-accent"></div>
+      </div>
+      <div class="step-card">
+        <span class="step-number">02</span>
+        <h3 class="step-title">Diseñamos tu solución</h3>
+        <p class="step-desc">Creamos una propuesta personalizada con tiempos y alcance claros</p>
+        <div class="step-accent"></div>
+      </div>
+      <div class="step-card">
+        <span class="step-number">03</span>
+        <h3 class="step-title">Implementamos y escalamos</h3>
+        <p class="step-desc">Desarrollamos tu infraestructura y te acompañamos en el crecimiento</p>
+        <div class="step-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="section-faq reveal-section">
+  <div class="container-narrow">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger"><span>¿Cuánto tiempo toma implementar una solución?</span><svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="accordion-content"><p>Dependiendo de la complejidad del proyecto, nuestros tiempos de implementación varían entre 2 y 8 semanas. Durante la fase de diseño te proporcionamos un cronograma detallado con hitos claros para que siempre sepas en qué punto estamos.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger"><span>¿Ofrecen paquetes personalizados?</span><svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="accordion-content"><p>Absolutamente. Cada negocio es diferente y nuestras soluciones se adaptan a tus necesidades específicas. Podemos crear paquetes que combinen varios de nuestros servicios o enfocarnos en una solución particular.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger"><span>¿Qué incluye el mantenimiento?</span><svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="accordion-content"><p>Nuestro servicio de mantenimiento incluye actualizaciones de seguridad, monitoreo de rendimiento, soporte técnico prioritario, backups regulares y optimizaciones continuas para asegurar que tu plataforma siempre funcione al máximo.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger"><span>¿Trabajan con negocios de cualquier tamaño?</span><svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="accordion-content"><p>Sí, trabajamos con negocios desde emprendimientos locales hasta empresas medianas. Nuestras soluciones son escalables y se adaptan al crecimiento de tu negocio sin necesidad de reconstruir desde cero.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger"><span>¿Cómo es el proceso de soporte?</span><svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="accordion-content"><p>Ofrecemos soporte dedicado a través de múltiples canales: email, chat y videollamada. Cada cliente tiene un gestor de cuenta asignado que conoce su proyecto a fondo y puede resolver cualquier consulta de forma ágil.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTO / CTA ═══ -->
+<section id="contacto" class="section-contact reveal-section">
+  <div class="container-narrow" style="text-align:center;">
+    <h2 class="section-title">¿Listo para transformar tu negocio?</h2>
+    <p class="contact-subtitle">Agenda una consulta gratuita y descubre cómo Core puede acelerar tu digitalización</p>
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary btn-full" id="submitBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+        Enviar consulta
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">Core<span class="accent-dot">.</span></a>
+        <p class="footer-tagline">Infraestructura digital para negocios que quieren crecer.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Core. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
