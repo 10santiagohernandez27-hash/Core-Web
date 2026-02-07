@@ -12,7 +12,7 @@ export const HowItWorks = () => {
       className="py-[80px] md:py-[120px] bg-[#F8F9FA] reveal-section"
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-20">
-        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-tight">
+        <h2 className="text-[32px] md:text-[48px] font-bold text-black text-center mb-[40px] md:mb-[60px] tracking-[-0.01em] leading-[1.2]">
           Cómo Funciona
         </h2>
 
@@ -26,10 +26,10 @@ export const HowItWorks = () => {
               <span className="block text-[52px] md:text-[64px] font-bold text-[#00E5FF] leading-none mb-5 select-none">
                 {step.number}
               </span>
-              <h3 className="text-[18px] md:text-[20px] font-bold text-black leading-[1.3] mb-3">
+              <h3 className="text-[24px] md:text-[24px] font-bold text-black leading-[1.3] mb-3">
                 {step.title}
               </h3>
-              <p className="text-[15px] md:text-[16px] text-black/55 leading-[1.6]">
+              <p className="text-[16px] md:text-[18px] text-black/55 leading-[1.6]">
                 {step.description}
               </p>
 
