@@ -24,7 +24,7 @@ export const Footer = () => {
             >
               Core<span className="text-[#00E5FF]">.</span>
             </a>
-            <p className="text-[14px] text-white/40 mt-2 max-w-[280px] leading-[1.5]">
+            <p className="text-[16px] text-white/40 mt-2 max-w-[280px] leading-[1.6]">
               Infraestructura digital para negocios que quieren crecer.
             </p>
           </div>
