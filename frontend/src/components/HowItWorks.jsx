@@ -34,7 +34,7 @@ export const HowItWorks = () => {
               </p>
 
               {/* Subtle bottom accent on hover */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-16 h-[3px] bg-[#D2FDFE] rounded-full transition-all duration-300" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-16 h-[3px] bg-[#00E5FF] rounded-full transition-[width] duration-300" />
             </div>
           ))}
         </div>
