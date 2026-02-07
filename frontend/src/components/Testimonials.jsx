@@ -26,7 +26,7 @@ export const Testimonials = () => {
             >
               <div className="flex items-start gap-4">
                 {/* Avatar placeholder */}
-                <div className="w-11 h-11 rounded-full bg-[#F2F3D9] flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-full bg-[#F8F9FA] flex items-center justify-center flex-shrink-0">
                   <span className="text-[14px] font-bold text-black/50">
                     {testimonial.name.charAt(0)}
                   </span>
